@@ -7,7 +7,7 @@ fn main() -> Result<()> {
         let hwnd = GetForegroundWindow();
         let msg = WM_SYSCOMMAND;
         let wparam = WPARAM(SC_MONITORPOWER as usize);
-        let lparam = LPARAM(BN_HILITE as isize);
+        let lparam = LPARAM(2);
 
         PostMessageW(hwnd, msg, wparam, lparam);
     }
