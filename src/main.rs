@@ -1,6 +1,7 @@
 mod msg;
 
 use msg::Msg;
+use std::{thread, time::Duration};
 use windows::{
     core::*, Win32::Foundation::*,
     Win32::UI::WindowsAndMessaging::*,
@@ -15,7 +16,7 @@ fn main() -> Result<()> {
             lparam: LPARAM(2),
         };
 
-        PostMessageW(hwnd, msg, wparam, lparam);
+        thread::sleep(Duration::from_secs(1));
         msg.post_message_w();
     }
 
